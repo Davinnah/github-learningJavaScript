@@ -9,4 +9,4 @@ function countdown() {
 		},(5-i)*1000);
 	}
 }
-countdown();
+countdown(20);
