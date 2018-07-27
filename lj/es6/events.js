@@ -1,7 +1,7 @@
 //Learning JavaScript Chapter 2: Development Tools
 "use strict";
 
-const EventEmitter = require("events").EventEmitter;
+const EventEmitter = require('events').EventEmitter;
 
 class Countdown extends EventEmitter {
 	constructor(seconds, superstitious) {
@@ -10,7 +10,7 @@ class Countdown extends EventEmitter {
 		this.superstitions = !!superstitious;
 	}
 	go() {
-		const countdown = this;
+		countdown = this;
 		return new Promise(function (resolve, reject) {
 			for (let i = countdown.seconds; i >= 0; i--) {
 				setTimeout(function () {
