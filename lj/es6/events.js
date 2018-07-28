@@ -1,20 +1,20 @@
 //Learning JavaScript Chapter 2: Development Tools
-const EventEmitter = require("events").EventEmitter;
+const EventEmitter = require('events').EventEmitter;
 
 class Countdown extends EventEmitter {
 	constructor(seconds, superstitious) {
 		super();
 		this.seconds = seconds;
-		this.superstitions = !!superstitious;
+		this.superstitious = !!superstitious;
 	}
 	go() {
 		const countdown = this;
-		return new Promise(function (resolve, reject) {
-			for (let i = countdown.seconds; i >= 0; i--) {
-				setTimeout(function () {
+		return new Promise(function(resolve, reject) {
+			for(let i = countdown.seconds; i >= 0; i--) {
+				setTimeout(function() {
 					if(countdown.superstitious && i===13)
-						return reject(new Error("DEFINITELY NOT COUNTING THAT"));
-					countdown.emit("tick",i);
+						return reject(new Error('DEFINITELY NOT COUNTING THAT'));
+					countdown.emit('tick', i);
 					if(i===0) resolve();
 				},(countdown.seconds-i)*1000);
 			}
@@ -23,14 +23,15 @@ class Countdown extends EventEmitter {
 }
 
 const c = new Countdown(5);
-c.on("tick", function (i) {
-	if(i>0) console.log(i + "...");
+
+c.on('tick', function(i) {
+	if(i>0) console.log(i + '...');
 });
 
 c.go()
-	.then(function () {
-		console.log("GO!");
+	.then(function() {
+		console.log('GO!');
 	})
-	.catch(function (err) {
+	.catch(function(err) {
 		console.log(err.message);
 	});
