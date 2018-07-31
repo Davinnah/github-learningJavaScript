@@ -2,22 +2,6 @@
 //checking for valid password
 //lookaheads
 
-function validPassword(p) {
-  return /[A-Z]/.test(p) &&
-  /[0-9]/.test(p) &&
-  /[a-z]/.test(p) &&
-  !/[^a-zA-Z0-9]/.test(p);
-}
-
-//next try
-function validPassword1(p) {
-  return /[A-Z].*[0-9][a-z]/.test(p)
-}//fails
-
-function validPassword2() {
-  return /(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/.test(p);
-}
-
 const pwd1 = 'April19699';
 const pwd2 = 'Shyanne69!';
 const blank = ' ';
@@ -50,3 +34,19 @@ result = validPassword2(blank);
 console.log('result blank: ', result);
 result = validPassword2(lc);
 console.log('result lc: ', result);
+
+function validPassword(p) {
+	return /[A-Z]/.test(p) &&
+  /[0-9]/.test(p) &&
+  /[a-z]/.test(p) &&
+  !/[^a-zA-Z0-9]/.test(p);
+}
+
+//next try
+function validPassword1(p) {
+	return /[A-Z].*[0-9][a-z]/.test(p);
+}//fails
+
+function validPassword2(p) {
+	return /(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])(?!.*[^a-zA-Z0-9])/.test(p);
+}
