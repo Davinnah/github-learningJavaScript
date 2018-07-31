@@ -13,6 +13,9 @@
   "author": "Davinna",
   "license": "ISC",
   "dependencies": {
+    "browserify": "^16.2.2",
+    "eventemitter": "^0.3.3",
+    "moment-timezone": "^0.5.21",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
