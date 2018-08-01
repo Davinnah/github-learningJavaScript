@@ -1,2 +1,2 @@
-= Learning JavaScript, 3rd Edition
-== by Ethan Brown
+=Learning JavaScript, 3rd Edition <br>
+==by Ethan Brown
