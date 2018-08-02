@@ -1,4 +1,3 @@
-// 0=off, 1=warning, 2=error
 module.exports = {
     "env": {
         "browser": true,
@@ -10,25 +9,23 @@ module.exports = {
         "ecmaVersion": 6
     },
     "rules": {
-        "no-unused-vars": [
-          "error", { "vars": "all", "args": "none", "ignoreRestSiblings": true }
-        ],
         "indent": [
             "error",
-            "tab"
+            4
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",
-            "single"
+            "double"
         ],
         "semi": [
             "error",
             "always"
         ],
         "no-console":1
+        ,
     }
 };
